@@ -33,7 +33,7 @@ post '/' do
     save_submission(params)
     redirect to('/word'), 302
   else
-    erb :index, :locals => {:message => 'All fields need to be filled out'}
+    erb :index, :locals => {:message => 'YO, The dataz are missing. This ain\'t mongo db. Please fill out all fields.'}
   end
 end
 
