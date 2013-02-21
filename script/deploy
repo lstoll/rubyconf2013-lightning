@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-assets='index.html stylesheets javascripts images fonts'
-echo "Deploying: $assets"
-
-s3cmd sync --force --reduced-redundancy --acl-public $assets s3://social.rubyconf.org.au/
