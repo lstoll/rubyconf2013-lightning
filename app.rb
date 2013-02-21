@@ -38,7 +38,7 @@ post '/' do
 end
 
 get '/word' do
-  # render 'success' page here
+  erb :word
 end
 
 # REPL me up if we're launched directly
