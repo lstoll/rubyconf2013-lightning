@@ -11,14 +11,13 @@ TALKS = DB[:talks]
 ################
 
 def valid_submission?(params)
-  %w(name email title description).map do |field|
-    f = field.to_sym
+  %w(name email title description).map do |f|
     params[f] && !params[f].empty?
   end.all?
 end
 
 def save_submission(params)
-  TALKS.insert(params.reject {|k,v| ![:name, :email, :title, :description].include?(k)})
+  TALKS.insert(params.reject {|k,v| !%w(name email title description).include?(k)})
 end
 
 ################
