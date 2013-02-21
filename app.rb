@@ -3,7 +3,8 @@ require 'pg'
 require 'sequel'
 require 'pry'
 
-Sequel.connect(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+DB = Sequel.connect(ENV['DATABASE_URL'] || 'postgres://localhost:5565/rclightning')
+TALKS = DB[:talks]
 
 ################
 # Logic and shit
@@ -14,6 +15,10 @@ def valid_submission?(params)
     f = field.to_sym
     params[f] && !params[f].empty?
   end.all?
+end
+
+def save_submission(params)
+  TALKS.insert(params.reject {|k,v| ![:name, :email, :title, :description].include?(k)})
 end
 
 ################
