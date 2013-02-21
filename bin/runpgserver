@@ -1,0 +1,22 @@
+#!/bin/bash
+PORT=5565
+DB=rclightning
+DATADIR=db/data
+#sudo sysctl -w kern.sysv.shmall=65536
+#sudo sysctl -w kern.sysv.shmmax=16777216
+if [ ! -d $DATADIR ]; then
+    mkdir -p $DATADIR
+    initdb $DATADIR
+    postgres -D $DATADIR -p $PORT &
+    PGPID=$!
+    while [ ! -S "/tmp/.s.PGSQL.${PORT}" ]
+    do
+        sleep 0.5
+    done
+    createdb -p $PORT $DB
+else
+    postgres -D $DATADIR -p $PORT -c log_statement=all &
+    PGPID=$!
+fi
+
+wait $PGPID
