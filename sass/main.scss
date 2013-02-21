@@ -1,0 +1,194 @@
+@import "normalize";
+@import "fonts";
+@import "variables";
+@import "grid";
+@import "respond-to";
+
+.grid { 
+  @extend %grid;
+
+  @include respond-to(phone) { padding: 0 3%; }
+}
+
+body { -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; } 
+
+[role='banner'] { @extend %sans; font-weight: bold; }
+
+[role='banner'], [role='contentinfo'] {
+  overflow: hidden; padding: 1.5em 0;
+  background-color: black;
+  color: white;
+
+  .logo { margin-right: .2em; font-size: 600%; color: $red; }
+
+  .logo, 
+  .event-information { float: left; }
+
+  .event-information p { margin: 0; }
+  .event-information,
+  .main-site-link { margin: 2em 0; }
+  .main-site-link { float: right; font-weight: normal; font-size: .8em; }
+
+  .icon { font-size: 150%; }
+
+  @include respond-to(phone) {
+    .logo, .event-information { float: none; text-align: center; }
+    .main-site-link { display: none; }
+  }
+}
+
+.important { text-transform: uppercase; }
+
+.introduction {
+  background-color: $red;
+  color: white;
+  padding: 3em 0;
+
+  h1 { 
+    @extend %mono; 
+    font-weight: normal; font-size: 4.1em; margin: 0; 
+
+    @include respond-to(phone) {
+      font-size: 2em;
+    }
+  }
+  h4 { @extend %mono; text-transform: uppercase; font-size: .8em; }
+}
+
+.event-summaries {
+  $bg-color: #EDECE6;
+  overflow : auto;
+  padding: 5em 0;
+
+  text-align: center;
+  background-color: $bg-color;
+
+  .event { 
+    @extend %sans;
+    float: left; 
+    width: 33%;
+
+    @include respond-to(phone) {
+      float: none; margin: 0 auto;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 3em;
+    }
+  }
+  .event .ring { 
+    margin: 0 auto;
+    $size: 10em;
+    padding: 1em;
+    background-color: $red; 
+    border-radius: $size;
+    width: $size; height: $size;
+    margin-bottom: 1.5em;
+  }
+  .event [class*="icon-"] {
+    display: inline-block;
+    vertical-align: middle; 
+    color: $bg-color;
+    font-size: 7em;
+  }
+
+  .event .day { color: rgba(0, 0, 0, .6); }
+  .event h2 { margin: 0; }
+  .event .important { @extend %mono; color: $red; font-size: .8em; }
+}
+
+.event-large .map-link { display: none; }
+.appleios .event-large .map-link { display: block; }
+.event-large iframe { pointer-events: none; }
+
+.event-large h1 { @extend %sans; font-size: 4em; margin: 0; }
+.event-large .event-info p { @extend %mono; }
+
+.day-one {
+  overflow: hidden; padding: 3em 0;
+  margin-bottom: 5em;
+  background-color: #90DABA; color: rgba(0, 0, 0, .4);
+
+  i { float: left; font-size: 2000%; }
+  .event-info { float: right; margin-top: 3em; }
+  .event-info p { font-size: 1.5em; }
+
+  .button { margin-top: 2em; font-weight: bold; color: white; background-color: rgba(0, 0, 0, .4); padding: .3em .7em; font-size: 1.5em; text-align: center; }
+
+  @include respond-to(phone) { 
+    text-align: center;
+
+    .event-info { margin: 0 auto; float: none; }
+    h1 { font-size: 2em; }
+    i { font-size: 700%; display: block; margin: 0 auto; }
+  }
+}
+
+.day-two {
+  color:  $red; line-height: 1.5;
+  position: relative; width: 100%; padding-bottom: 15em; margin-bottom: 5em;
+
+  header {
+    position: absolute; width: 100%; bottom: 0;
+  }
+
+  p, span { @extend %mono; }
+  p { font-size: 1.3em; }
+
+  .grid { position: relative; }
+
+  .maps { margin-top: 1em; }
+  .maps .map-link { background-color: $red; color: white; padding: .3em .7em; font-size: 1.5em; text-align: center; }
+  .maps .map-link i { margin-left: .25em; }
+}
+
+.day-three {
+  $blue: #187CBB;
+  position: relative;
+
+  color: white;
+
+  header {
+    padding: 1em 2em;
+    position: absolute; top: 15%; left: 5%;
+    background-color: $blue;
+
+    h2 { @extend %mono; font-size: 2em; font-weight: normal; text-transform: uppercase; }
+
+    @include respond-to(phone) { 
+      position: static;
+      iframe { height: 200px; }
+    }
+  }
+
+  footer { 
+    padding: 1em 0 2em 0;
+    background-color: $blue;
+    overflow: hidden;
+
+    .important { display: block; font-size: .6em; }
+
+    .address { float: left; line-height: 1.5; }
+    .address p { font-size: 1.5em; }
+    .sponsors { 
+      float: right;
+
+      @include respond-to(phone) { float: none; }
+
+      a { margin-right: 1em; }
+      i { font-size: 300%; }
+    }
+
+    p { @extend %mono; }
+  }
+}
+
+
+
+[role='contentinfo'] { 
+  clear: both;
+  padding: 2em 0;
+  font-size: .9em;
+
+  span { @extend %mono; }
+}

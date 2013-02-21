@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+result = `compass compile --force`
+
+puts result
+
+puts "Prefixing css"
+
+path = File.dirname(__FILE__)
+
+Dir.chdir("#{path}/../stylesheets") do
+  Dir['*.css'].each do |file|
+    cmd = "kaft #{file} #{file}"
+    result = `#{cmd}`
+
+    puts "Processing #{file}"
+    puts result
+  end
+end
