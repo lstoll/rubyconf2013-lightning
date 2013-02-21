@@ -1,4 +1,4 @@
 .DS_Store
 /db/data
 /.bundle
-/.sass-cache
+.sass-cache
