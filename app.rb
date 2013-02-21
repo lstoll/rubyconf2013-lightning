@@ -29,6 +29,19 @@ get '/' do
   erb :index
 end
 
+post '/' do
+  if valid_submission?(params)
+    save_submission(params)
+    redirect to('/word'), 302
+  else
+    erb :index, :locals => {:message => 'All fields need to be filled out'}
+  end
+end
+
+get '/word' do
+  # render 'success' page here
+end
+
 # REPL me up if we're launched directly
 if __FILE__ == $0
   binding.pry
