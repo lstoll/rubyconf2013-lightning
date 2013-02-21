@@ -51,7 +51,13 @@
         </h1>
       </div>
     </section>
-    
+
+    <% if defined? message %>
+      <section class="message">
+        <span><%= message %></span>
+      </section>
+    <% end %>
+
     <section class="submission">
       <!-- Game it, you're probably a dick. -->
       <form class="grid" action="/" method="POST">
