@@ -6,7 +6,7 @@ require 'pry'
 Sequel.connect(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
 get '/' do
-  'Hello world!'
+  erb :index
 end
 
 # REPL me up if we're launched directly
