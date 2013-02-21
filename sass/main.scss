@@ -103,29 +103,7 @@ a { color: inherit; text-decoration: none; }
 .event-large .event-info p { @extend %mono; }
 
 
-  footer { 
-    padding: 1em 0 2em 0;
-    background-color: $blue;
-    overflow: hidden;
-
-    .important { display: block; font-size: .6em; }
-
-    .address { float: left; line-height: 1.5; }
-    .address p { font-size: 1.5em; }
-    .sponsors { 
-      float: right;
-
-      @include respond-to(phone) { float: none; }
-
-      a { margin-right: 1em; }
-      i { font-size: 300%; }
-    }
-
-    p { @extend %mono; }
-  }
-}
-
-
+.prize img { width: 100%; }
 
 [role='contentinfo'] { 
   clear: both;
