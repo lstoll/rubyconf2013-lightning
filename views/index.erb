@@ -46,19 +46,47 @@
     <section class="introduction">
       <div class="grid">
         <h1>
-          Five minutes to glory time.<br><br>
-          Your chance for stardom.
+          Zero to hero.<br><br>
+          You've got five minutes.
         </h1>
       </div>
     </section>
     
+    <section class="submission">
+      <!-- Game it, you're probably a dick. -->
+      <form action="/">
+        <fieldset>
+          <label for="name">Name</label>
+          <input id="name" name="name">
+        </fieldset>
+        
+        <fieldset>
+          <label for="email">E-Mail</label>
+          <input type="email" name="email">
+        </fieldset>
+        
+        <fieldset>
+          <label for="title">Talk title</label>
+          <input type="title" name="title">
+        </fieldset>  
+        
+        <fieldset>
+          <label for="description">Tell us about your talk</label>
+          <textarea id="description" name="description"></textarea>
+        </fieldset>
+        
+        <button type="submit">Submit my talk</button>
+      </form>
+    </section>
+    
     <section class="prize">
       <h1></h1>
+      <img src="/prize.jpg">
     </section>
     
     <footer role="contentinfo">
       <div class="grid">
-        <span>© Copyright Ruby Australia / Another joint by <a href="http://twitter.com/benschwarz">Ben Schwarz</a></span>
+        <span>© Copyright Ruby Australia / Another joint by <a href="http://twitter.com/benschwarz">Ben Schwarz</a> and <a href="http://twitter.com/lstoll">Lincoln Stoll</a></span>
       </div>
     </footer>
   </body>

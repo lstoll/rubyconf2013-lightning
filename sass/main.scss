@@ -38,8 +38,6 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-.important { text-transform: uppercase; }
-
 .introduction {
   background-color: $red;
   color: white;
@@ -104,62 +102,6 @@ a { color: inherit; text-decoration: none; }
 .event-large h1 { @extend %sans; font-size: 4em; margin: 0; }
 .event-large .event-info p { @extend %mono; }
 
-.day-one {
-  overflow: hidden; padding: 3em 0;
-  margin-bottom: 5em;
-  background-color: #90DABA; color: rgba(0, 0, 0, .4);
-
-  i { float: left; font-size: 2000%; }
-  .event-info { float: right; margin-top: 3em; }
-  .event-info p { font-size: 1.5em; }
-
-  .button { margin-top: 2em; font-weight: bold; color: white; background-color: rgba(0, 0, 0, .4); padding: .3em .7em; font-size: 1.5em; text-align: center; }
-
-  @include respond-to(phone) { 
-    text-align: center;
-
-    .event-info { margin: 0 auto; float: none; }
-    h1 { font-size: 2em; }
-    i { font-size: 700%; display: block; margin: 0 auto; }
-  }
-}
-
-.day-two {
-  color:  $red; line-height: 1.5;
-  position: relative; width: 100%; padding-bottom: 15em; margin-bottom: 5em;
-
-  header {
-    position: absolute; width: 100%; bottom: 0;
-  }
-
-  p, span { @extend %mono; }
-  p { font-size: 1.3em; }
-
-  .grid { position: relative; }
-
-  .maps { margin-top: 1em; }
-  .maps .map-link { background-color: $red; color: white; padding: .3em .7em; font-size: 1.5em; text-align: center; }
-  .maps .map-link i { margin-left: .25em; }
-}
-
-.day-three {
-  $blue: #187CBB;
-  position: relative;
-
-  color: white;
-
-  header {
-    padding: 1em 2em;
-    position: absolute; top: 15%; left: 5%;
-    background-color: $blue;
-
-    h2 { @extend %mono; font-size: 2em; font-weight: normal; text-transform: uppercase; }
-
-    @include respond-to(phone) { 
-      position: static;
-      iframe { height: 200px; }
-    }
-  }
 
   footer { 
     padding: 1em 0 2em 0;
